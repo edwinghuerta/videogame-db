@@ -1,23 +1,49 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar nav">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarTogglerDemo01"
+    aria-controls="navbarTogglerDemo01"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand" href="#">Hidden brand</a>
-    <ul class="navbar-nav w-100">
-      <li class="nav-item active">
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav w-100" id="nav">
+      <li >
+       <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control col-8 mr-sm-2"
+            type="text"
+            [(ngModel)]="searchText"
+            [ngModelOptions]="{ standalone: true }"
+            (ngModelChange)="Search($event)"
+          />
         </form>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <div id="box" class="col-10 col-sm-8 col-md-6 box" *ngIf="showBox">
+          <ul>
+            <li>
+              <h5 class="search-header">
+                Games
+              </h5>
+            </li>
+            <li
+              *ngFor="let game of PopularGamesArray | slice: 0:4; let i = index"
+            >
+              <div class="container">
+                <div class="row">
+                  <span
+                    class="search-image"
+                    style="background-image: url({{game.background_image}});"></span>
+                  <a class="search-text">{{ game.name }}</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </li>
     </ul>
   </div>

@@ -1,8 +1,8 @@
 <div class="container">
-  <h1>Most Popular Games</h1>
+  <h1 class="upper-text">Top 20 Games</h1>
   <div class="card-columns">
   <ng.container *ngFor= "let game of PopularGamesArray">
-    <div class="card">
+    <!--<div class="card border-0">
       <img
         class="card-img-top img-fluid"
         src="{{game.background_image}}"
@@ -14,6 +14,15 @@
           <img src="../../../assets/img/prueba.svg" alt="metacritic icon" class="icon">
           {{game.metacritic}}
         </p>
+      </div>
+    </div>-->
+    <div class="card border-0">
+      <img class="card-img-top" src="{{game.background_image}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" (click)="gameInfo(game)">{{game.name}}</h5>
+        <p class="card-text">
+          <img src="../../../assets/img/prueba.svg" alt="metacritic icon" class="icon">
+          {{game.metacritic}}</p>
       </div>
     </div>
   </ng.container>

@@ -11,6 +11,36 @@ a{
   color: black;
 }
 
+.upper-text{
+  color: white;
+}
+
+.card{
+  border-color: #202020;
+  background-color: #151515;
+  width: 20rem;
+}
+
+.card-body{
+  background-color: #202020;
+  border-bottom-left-radius: 18.5px;
+  border-bottom-right-radius: 18.5px;
+}
+
+.card-img-top{
+  border-top-left-radius: 18.5px;
+  border-top-right-radius: 18.5px;
+}
+
+.card-title{
+  color: white;
+  cursor: pointer;
+}
+
+.card-text{
+  color: white;
+}
+
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {
   .card-columns {column-count: 1;}

@@ -15,12 +15,20 @@ export class GameListService {
   getGameDetails() {
     let endpoint = `${this.baseUrl}games`;
     console.log(endpoint);
+    console.log(this.http.get(endpoint));
 
     return this.http.get(endpoint);
   }
 
   getSingleGameDetails(slug) {
     let endpoint = `${this.baseUrl}games/${slug}`;
+    console.log(endpoint);
+
+    return this.http.get(endpoint);
+  }
+
+  getSearchResults(slug) {
+    let endpoint = `${this.baseUrl}games?search=${slug}`;
     console.log(endpoint);
 
     return this.http.get(endpoint);
