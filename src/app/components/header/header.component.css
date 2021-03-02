@@ -41,10 +41,68 @@ ul{
   display: flex;
 }
 
-.search-header{
-  margin-top: 1rem;
+.search-container{
+  width: 275px;
+}
+
+.search-bar{
+  border-radius: 28px;
+  background-color: #3b3b3b;
+  color: white;
+  padding: 20px;
+  width: 100%;
+}
+
+.search-suggestions{
+  display: block;
+  z-index: 15;
+  position: absolute;
+  background-color: black;
+  width: 275px;
+  border-radius: 28px;
+  color: white;
+  padding: 1rem;
+}
+
+.search-bar:focus{
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
 }
 
 .nav{
   background-color: #151515;
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  .search-container{
+    width: 500px;
+  }
+
+  .search-suggestions{
+    width: 500px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .search-container{
+    width: 900px;
+  }
+
+  .search-suggestions{
+    width: 900px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .search-container{
+    width: 944px;
+  }
+
+  .search-suggestions{
+    width: 944px;
+  }
 }
